@@ -20,6 +20,15 @@
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               serif: ['Merriweather', 'serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '0.4' },
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 1s ease-out forwards',
             }
           }
         }
@@ -30,20 +39,9 @@
       body { font-family: 'Inter', sans-serif; }
       h1, h2, h3 { letter-spacing: -0.025em; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "d3": "https://esm.sh/d3@^7.9.0"
-  }
-}
-</script>
 </head>
   <body class="bg-dark text-light antialiased selection:bg-accent selection:text-white">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

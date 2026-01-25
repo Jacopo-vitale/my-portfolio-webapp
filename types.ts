@@ -40,9 +40,3 @@ export interface Skill {
   category: string;
   items: string[];
 }
-
-export interface Message {
-  role: 'user' | 'model';
-  text: string;
-  timestamp: Date;
-}

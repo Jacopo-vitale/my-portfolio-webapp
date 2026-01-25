@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { SKILLS } from '../constants';
 
@@ -13,17 +14,36 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-dark text-light border-t border-zinc-900">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <h2 className="text-3xl font-bold text-white mb-2 text-center">Technical Expertise</h2>
-        <div className="h-1 w-20 bg-accent mx-auto mb-16"></div>
+    <section id="skills" className="py-24 bg-dark text-light border-t border-zinc-900 relative">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-white mb-2 text-center"
+        >
+            Technical Expertise
+        </motion.h2>
+        <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="h-1 bg-accent mx-auto mb-16"
+        ></motion.div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           {/* Chart - Styled to be minimal */}
-          <div className="h-[400px] w-full relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="h-[400px] w-full relative"
+          >
              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                <div className="w-64 h-64 border border-accent rounded-full"></div>
+                <div className="w-64 h-64 border border-accent rounded-full animate-pulse"></div>
                 <div className="w-48 h-48 border border-accent absolute rounded-full"></div>
              </div>
             <ResponsiveContainer width="100%" height="100%">
@@ -38,6 +58,7 @@ const Skills: React.FC = () => {
                   strokeWidth={2}
                   fill="#9f1239"
                   fillOpacity={0.6}
+                  isAnimationActive={true}
                 />
                 <Tooltip 
                     contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', color: '#fff', fontSize: '12px' }}
@@ -46,21 +67,32 @@ const Skills: React.FC = () => {
                 />
               </RadarChart>
             </ResponsiveContainer>
-          </div>
+          </motion.div>
 
           {/* List */}
           <div className="grid grid-cols-1 gap-8">
-            {SKILLS.map((skillGroup) => (
-              <div key={skillGroup.category} className="border-b border-zinc-800 pb-6 last:border-0">
+            {SKILLS.map((skillGroup, index) => (
+              <motion.div 
+                key={skillGroup.category} 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="border-b border-zinc-800 pb-6 last:border-0"
+              >
                 <h3 className="text-sm font-bold text-accent uppercase tracking-widest mb-4">{skillGroup.category}</h3>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {skillGroup.items.map((item) => (
-                    <span key={item} className="text-zinc-300 font-light hover:text-white transition-colors cursor-default">
+                    <motion.span 
+                        key={item} 
+                        whileHover={{ scale: 1.05, color: "#fff" }}
+                        className="text-zinc-300 font-light hover:text-white transition-colors cursor-default"
+                    >
                       {item}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
