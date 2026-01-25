@@ -1,20 +1,60 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Jacopo Vitale - Professional Portfolio
 
-# Run and deploy your AI Studio app
+A modern, responsive, and interactive portfolio website designed for a PhD Candidate in Bioengineering & Intelligent Systems. This project showcases academic achievements, research experience, and technical skills using a high-performance tech stack.
 
-This contains everything you need to run your app locally.
+![Project Status](https://img.shields.io/badge/status-active-success.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Fw0yIoruXXNrD8_mLLWf4c-AGHB3rlJJ
+## 🚀 Features
 
-## Run Locally
+*   **Responsive Design:** Fully optimized for desktop, tablet, and mobile devices.
+*   **Modern Animations:** Smooth, scroll-triggered entrance animations powered by `framer-motion`.
+*   **Interactive Data Visualization:** Dynamic radar chart for skill proficiency visualization using `recharts`.
+*   **Clean UI/UX:** Minimalist, "dark mode" aesthetic with a focus on typography and readability, built with Tailwind CSS.
+*   **Type Safety:** Built entirely with TypeScript for robust and maintainable code.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
 
+*   **Framework:** [React](https://reactjs.org/) (v19)
+*   **Build Tool:** [Vite](https://vitejs.dev/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Animations:** [Framer Motion](https://www.framer.com/motion/)
+*   **Charts:** [Recharts](https://recharts.org/)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Installation & Local Development
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Jacopo-vitale/my-portfolio-webapp.git
+    cd my-portfolio-webapp
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    The application will be available at `http://localhost:3000`.
+
+## 🏗️ Build for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
+```
+
+This will generate a `dist` folder containing the optimized assets ready for deployment.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Jacopo Vitale** - *PhD Candidate in Bioengineering & Intelligent Systems*
