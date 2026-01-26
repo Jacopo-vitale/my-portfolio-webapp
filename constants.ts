@@ -246,4 +246,13 @@ export const GALLERY: GalleryItem[] = [
     description: "Visiting scholar at UMC Utrecht, exploring EHR data mining.",
     link:"https://research.umcutrecht.nl/technologies/bioinformatics/routine-care-data-analytics/"
   },
+  {
+    id: "edu-1",
+    title: "Guest Lecturer - Cambridge",
+    category: "Teaching",
+    location: "Jesus College in the University of Cambridge, United Kingdom",
+    image: "/photos/cambridge.jpg", // Placeholder
+    description: "Tutoring and holding a seminar on Docker & Kubernetes",
+    link:"https://www.jesus.cam.ac.uk/"
+  },
 ];
