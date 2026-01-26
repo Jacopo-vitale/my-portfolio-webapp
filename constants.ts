@@ -233,7 +233,7 @@ export const GALLERY: GalleryItem[] = [
     title: "CMBEBIH & MEDICON 2023",
     category: "Conference",
     location: "Sarajevo, Bosnia and Herzegovina",
-    image: "/photos/medicon.jpg",
+    image: "photos/medicon.jpg",
     description: "Participated in the joint 5th CMBEBIH and 16th MEDICON conference, focusing on AI, Big Data, and Sustainable Healthcare innovations (Sep 14-16, 2023).",
     link: "https://cmbebih2023.cmbebih.com/"
   },
@@ -242,7 +242,7 @@ export const GALLERY: GalleryItem[] = [
     title: "Visiting PhD - NLP",
     category: "Travel",
     location: "University Medical Center of Utrecht, Netherlands",
-    image: "/photos/utrecht.jpg", // Placeholder
+    image: "photos/utrecht.jpg", // Placeholder
     description: "Visiting scholar at UMC Utrecht, exploring EHR data mining.",
     link:"https://research.umcutrecht.nl/technologies/bioinformatics/routine-care-data-analytics/"
   },
@@ -251,7 +251,7 @@ export const GALLERY: GalleryItem[] = [
     title: "Guest Lecturer - Cambridge",
     category: "Teaching",
     location: "Jesus College in the University of Cambridge, United Kingdom",
-    image: "/photos/cambridge.jpg", // Placeholder
+    image: "photos/cambridge.jpg", // Placeholder
     description: "Tutoring and holding a seminar on Docker & Kubernetes",
     link:"https://www.jesus.cam.ac.uk/"
   },
