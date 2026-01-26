@@ -40,3 +40,14 @@ export interface Skill {
   category: string;
   items: string[];
 }
+
+export interface GalleryItem {
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  partners?: string; // Optional field for EU projects
+  image: string;
+  description: string;
+  link?: string;
+}

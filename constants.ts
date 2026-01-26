@@ -1,4 +1,4 @@
-import { Experience, Education, Publication, Project, Skill } from './types';
+import { Experience, Education, Publication, Project, Skill, GalleryItem } from './types';
 
 export const PROFILE = {
   name: "Jacopo Vitale",
@@ -93,14 +93,15 @@ export const PUBLICATIONS: Publication[] = [
     title: "Artificial intelligence for left ventricular hypertrophy detection and differentiation on echocardiography, cardiac magnetic resonance and cardiac computed tomography: A systematic review",
     journal: "International Journal of Cardiology",
     year: "2025",
-    doi: "https://doi.org/10.1016/j.ijcard.2024.132646" 
+    doi: "https://doi.org/10.1016/j.ijcard.2025.132979" 
   },
   {
     id: "2",
     authors: "Vitale, J., et al.",
     title: "Automatic Text Classification in Cardiac Risk Management: A Pilot Study",
     journal: "NBC on BME",
-    year: "2025"
+    year: "2025",
+    doi: "https://doi.org/10.1007/978-3-031-96538-8_16"
   },
   {
     id: "3",
@@ -108,7 +109,7 @@ export const PUBLICATIONS: Publication[] = [
     title: "Rare Eye Diseases Automatic Classification: A Deep Learning Approach",
     journal: "EMBEC",
     year: "2024",
-    doi: "https://doi.org/10.1007/978-3-031-61657-6_26"
+    doi: "https://doi.org/10.1007/978-3-031-61628-0_27"
   },
   {
     id: "4",
@@ -116,14 +117,15 @@ export const PUBLICATIONS: Publication[] = [
     title: "A Machine Learning Approach for Predicting Electrophysiological Responses in Genetically Modified HEK Cells",
     journal: "EMBEC",
     year: "2024",
-    doi: "https://doi.org/10.1007/978-3-031-61657-6_54"
+    doi: "https://doi.org/10.1007/978-3-031-61625-9_1"
   },
   {
     id: "5",
     authors: "Formica, V., ..., Vitale, J., et al.",
     title: "Clinicomics for predicting HER2 expression in metastatic colorectal cancer: a multicenter machine learning analysis on real-world data",
     journal: "Oncology",
-    year: "2025"
+    year: "2025",
+    doi:"https://doi.org/10.1159/000549661"
   },
   {
     id: "6",
@@ -131,14 +133,16 @@ export const PUBLICATIONS: Publication[] = [
     title: "Genetic Algorithm for Predicting Primary Imatinib Resistance in Locally Advanced or Metastatic Gastrointestinal Stromal Tumors",
     journal: "NBC on BME",
     year: "2025",
-    award: "Best Research Paper Award"
+    award: "Best Research Paper Award",
+    doi:"https://doi.org/10.1007/978-3-031-96538-8_17"
   },
   {
     id: "7",
     authors: "Pagnano, M.E., ..., Vitale, J., et al.",
     title: "Echocardiographic Image-Based Classification of Cardiac Amyloidosis: A Proof of Concept",
     journal: "NBC on BME",
-    year: "2025"
+    year: "2025",
+    doi:"https://doi.org/10.1007/978-3-031-96538-8_18"
   }
 ];
 
@@ -187,4 +191,52 @@ export const AWARDS = [
   "Winner, Scientific Challenge -- EMBEC 2024, Slovenia",
   "Guest Lecturer -- University of Cambridge (2024)",
   "Organising Committee Member -- IEEE BHI'24 Data Challenge"
+];
+
+export const GALLERY: GalleryItem[] = [
+  {
+    id: "eu-project-1",
+    title: "Horizon Europe - ODIN Smart Hospitals",
+    category: "EU Project",
+    location: "EU Consortium",
+    partners: "Medtronic (Coordinator), Philips, Charité Berlin, UMC Utrecht, UCBM Rome, Scuola Sant'Anna, Uni Warwick, Robotnik, and 12 other partners across 10 countries.",
+    image: "photos/odin.jpg", // Placeholder
+    description: "Leveraging AI and robotics to transform hospital care delivery, disaster preparedness, and resiliency.",
+    link: "https://odin-smarthospitals.eu/"
+  },
+  {
+    id: "eu-project-2",
+    title: "Odin Consortium Meeting",
+    category: "EU Project",
+    location: "Rome, Italy",
+    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=800&auto=format&fit=crop", // Placeholder
+    description: "Hosted European partners at University Campus Bio-Medico for the Odin Smart Hospitals milestone review.",
+    link: "https://odin-smarthospitals.eu/"
+  },
+  {
+    id: "conf-1",
+    title: "EMBEC 2024 Conference",
+    category: "Conference",
+    location: "Portorož, Slovenia",
+    image: "photos/embec.jpg", // Placeholder
+    description: "Presented research on AI in Healthcare & Rare Disease Diagnostics. Covered emerging fields like Neurotechnology and Translational Research (June 9-13, 2024).",
+    link: "https://www.embec2024.org/"
+  },
+  {
+    id: "trip-1",
+    title: "Nordic Research Visit",
+    category: "Travel",
+    location: "Utrecht, Netherlands",
+    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop", // Placeholder
+    description: "Visiting scholar at UMC Utrecht, exploring EHR data mining."
+  },
+  {
+    id: "conf-2",
+    title: "CMBEBIH & MEDICON 2023",
+    category: "Conference",
+    location: "Sarajevo, Bosnia and Herzegovina",
+    image: "/photos/medicon.jpg",
+    description: "Participated in the joint 5th CMBEBIH and 16th MEDICON conference, focusing on AI, Big Data, and Sustainable Healthcare innovations (Sep 14-16, 2023).",
+    link: "https://cmbebih2023.cmbebih.com/"
+  }
 ];

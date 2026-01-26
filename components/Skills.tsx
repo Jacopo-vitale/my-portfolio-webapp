@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { SKILLS } from '../constants';
+import { Brain } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const data = [
@@ -14,15 +15,15 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-dark text-light border-t border-zinc-900 relative">
+    <section id="skills" className="py-24 bg-dark text-light border-t border-slate-900 relative">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-white mb-2 text-center"
+            className="text-3xl font-bold text-white mb-2 text-center flex items-center justify-center gap-2"
         >
-            Technical Expertise
+            <Brain className="text-accent w-8 h-8" /> Technical Expertise
         </motion.h2>
         <motion.div 
             initial={{ width: 0 }}
@@ -43,27 +44,27 @@ const Skills: React.FC = () => {
             className="h-[400px] w-full relative"
           >
              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                <div className="w-64 h-64 border border-accent rounded-full animate-pulse"></div>
+                <div className="w-64 h-64 border border-accent rounded-full animate-pulse-slow"></div>
                 <div className="w-48 h-48 border border-accent absolute rounded-full"></div>
              </div>
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-                <PolarGrid stroke="#3f3f46" />
-                <PolarAngleAxis dataKey="subject" tick={{ fill: '#71717a', fontSize: 12, fontWeight: 500 }} />
+                <PolarGrid stroke="#334155" /> {/* slate-700 */}
+                <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 500, fontFamily: 'monospace' }} />
                 <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                 <Radar
                   name="Proficiency"
                   dataKey="A"
-                  stroke="#9f1239"
+                  stroke="#06b6d4" // cyan-500
                   strokeWidth={2}
-                  fill="#9f1239"
-                  fillOpacity={0.6}
+                  fill="#06b6d4"
+                  fillOpacity={0.4}
                   isAnimationActive={true}
                 />
                 <Tooltip 
-                    contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', color: '#fff', fontSize: '12px' }}
-                    itemStyle={{ color: '#fb7185' }}
-                    cursor={{ stroke: '#9f1239', strokeWidth: 1 }}
+                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#fff', fontSize: '12px' }}
+                    itemStyle={{ color: '#22d3ee' }}
+                    cursor={{ stroke: '#06b6d4', strokeWidth: 1 }}
                 />
               </RadarChart>
             </ResponsiveContainer>
@@ -78,15 +79,15 @@ const Skills: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="border-b border-zinc-800 pb-6 last:border-0"
+                className="border-b border-slate-800 pb-6 last:border-0"
               >
-                <h3 className="text-sm font-bold text-accent uppercase tracking-widest mb-4">{skillGroup.category}</h3>
+                <h3 className="text-sm font-bold text-accent uppercase tracking-widest mb-4 font-mono">{skillGroup.category}</h3>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {skillGroup.items.map((item) => (
                     <motion.span 
                         key={item} 
                         whileHover={{ scale: 1.05, color: "#fff" }}
-                        className="text-zinc-300 font-light hover:text-white transition-colors cursor-default"
+                        className="text-slate-300 font-light hover:text-white transition-colors cursor-default"
                     >
                       {item}
                     </motion.span>

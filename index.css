@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #0f172a;
+  --color-secondary: #1e293b;
+  --color-accent: #06b6d4;
+  --color-dark: #020617;
+  --color-light: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Custom Utilities */
+@utility bg-grid-pattern {
+  background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark text-light font-sans antialiased selection:bg-accent selection:text-white;
+}
