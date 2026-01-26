@@ -205,7 +205,7 @@ export const GALLERY: GalleryItem[] = [
     category: "EU Project",
     location: "EU Consortium",
     partners: "Medtronic (Coordinator), Philips, Charité Berlin, UMC Utrecht, UCBM Rome, Scuola Sant'Anna, Uni Warwick, Robotnik, and 12 other partners across 10 countries.",
-    image: "photos/odin.jpg", // Placeholder
+    image: "odin.jpg", // Placeholder
     description: "Leveraging AI and robotics to transform hospital care delivery, disaster preparedness, and resiliency.",
     link: "https://odin-smarthospitals.eu/"
   },
@@ -215,7 +215,7 @@ export const GALLERY: GalleryItem[] = [
     category: "EU Project",
     location: "EU Consortium",
     partners: "Large-scale European Pilot under Horizon 2020.",
-    image: "photos/gk.webp",
+    image: "gk.webp",
     description: "Creating an open, trust-based arena utilizing smart data-driven solutions for personalized early risk detection and intervention for aging populations.",
     link: "https://www.gatekeeper-project.eu/"
   },
@@ -224,7 +224,7 @@ export const GALLERY: GalleryItem[] = [
     title: "EMBEC 2024 Conference",
     category: "Conference",
     location: "Portorož, Slovenia",
-    image: "photos/embec.jpg", // Placeholder
+    image: "embec.jpg", // Placeholder
     description: "Presented research on AI in Healthcare & Rare Disease Diagnostics. Covered emerging fields like Neurotechnology and Translational Research (June 9-13, 2024).",
     link: "https://www.embec2024.org/"
   },
@@ -233,7 +233,7 @@ export const GALLERY: GalleryItem[] = [
     title: "CMBEBIH & MEDICON 2023",
     category: "Conference",
     location: "Sarajevo, Bosnia and Herzegovina",
-    image: "photos/medicon.jpg",
+    image: "medicon.jpg",
     description: "Participated in the joint 5th CMBEBIH and 16th MEDICON conference, focusing on AI, Big Data, and Sustainable Healthcare innovations (Sep 14-16, 2023).",
     link: "https://cmbebih2023.cmbebih.com/"
   },
@@ -242,7 +242,7 @@ export const GALLERY: GalleryItem[] = [
     title: "Visiting PhD - NLP",
     category: "Travel",
     location: "University Medical Center of Utrecht, Netherlands",
-    image: "photos/utrecht.jpg", // Placeholder
+    image: "utrecht.jpg", // Placeholder
     description: "Visiting scholar at UMC Utrecht, exploring EHR data mining.",
     link:"https://research.umcutrecht.nl/technologies/bioinformatics/routine-care-data-analytics/"
   },
@@ -251,7 +251,7 @@ export const GALLERY: GalleryItem[] = [
     title: "Guest Lecturer - Cambridge",
     category: "Teaching",
     location: "Jesus College in the University of Cambridge, United Kingdom",
-    image: "photos/cambridge.jpg", // Placeholder
+    image: "cambridge.jpg", // Placeholder
     description: "Tutoring and holding a seminar on Docker & Kubernetes",
     link:"https://www.jesus.cam.ac.uk/"
   },
