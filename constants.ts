@@ -205,13 +205,14 @@ export const GALLERY: GalleryItem[] = [
     link: "https://odin-smarthospitals.eu/"
   },
   {
-    id: "eu-project-2",
-    title: "Odin Consortium Meeting",
+    id: "gatekeeper",
+    title: "Horizon 2020 - GATEKEEPER",
     category: "EU Project",
-    location: "Rome, Italy",
-    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=800&auto=format&fit=crop", // Placeholder
-    description: "Hosted European partners at University Campus Bio-Medico for the Odin Smart Hospitals milestone review.",
-    link: "https://odin-smarthospitals.eu/"
+    location: "EU Consortium",
+    partners: "Large-scale European Pilot under Horizon 2020.",
+    image: "photos/gk.webp",
+    description: "Creating an open, trust-based arena utilizing smart data-driven solutions for personalized early risk detection and intervention for aging populations.",
+    link: "https://www.gatekeeper-project.eu/"
   },
   {
     id: "conf-1",
@@ -223,14 +224,6 @@ export const GALLERY: GalleryItem[] = [
     link: "https://www.embec2024.org/"
   },
   {
-    id: "trip-1",
-    title: "Nordic Research Visit",
-    category: "Travel",
-    location: "Utrecht, Netherlands",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop", // Placeholder
-    description: "Visiting scholar at UMC Utrecht, exploring EHR data mining."
-  },
-  {
     id: "conf-2",
     title: "CMBEBIH & MEDICON 2023",
     category: "Conference",
@@ -238,5 +231,14 @@ export const GALLERY: GalleryItem[] = [
     image: "/photos/medicon.jpg",
     description: "Participated in the joint 5th CMBEBIH and 16th MEDICON conference, focusing on AI, Big Data, and Sustainable Healthcare innovations (Sep 14-16, 2023).",
     link: "https://cmbebih2023.cmbebih.com/"
-  }
+  },
+  {
+    id: "trip-1",
+    title: "Visiting PhD - NLP",
+    category: "Travel",
+    location: "University Medical Center of Utrecht, Netherlands",
+    image: "/photos/utrecht.jpg", // Placeholder
+    description: "Visiting scholar at UMC Utrecht, exploring EHR data mining.",
+    link:"https://research.umcutrecht.nl/technologies/bioinformatics/routine-care-data-analytics/"
+  },
 ];
