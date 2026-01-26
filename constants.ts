@@ -2,7 +2,7 @@ import { Experience, Education, Publication, Project, Skill, GalleryItem } from 
 
 export const PROFILE = {
   name: "Jacopo Vitale",
-  title: "AI & Robotics for Medical Applications",
+  title: "AI & Robotics for Medical Research Applications",
   location: "Rome, Italy",
   locationLink: "https://www.google.com/maps/search/?api=1&query=Rome,+Italy",
   hometown: "Formia, Italy",

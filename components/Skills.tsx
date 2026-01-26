@@ -15,56 +15,54 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-dark text-light border-t border-slate-900 relative">
+    <section id="skills" className="py-24 bg-primary dark:bg-primary-dark relative transition-colors duration-300">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-white mb-2 text-center flex items-center justify-center gap-2"
-        >
-            <Brain className="text-accent w-8 h-8" /> Technical Expertise
-        </motion.h2>
-        <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 80 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="h-1 bg-accent mx-auto mb-16"
-        ></motion.div>
+        <div className="text-center mb-16">
+            <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl font-serif font-bold text-dark dark:text-text-dark mb-4 flex items-center justify-center gap-2"
+            >
+                <Brain className="text-accent dark:text-accent-dark w-8 h-8" /> Technical Expertise
+            </motion.h2>
+            <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: 60 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="h-1 bg-accent dark:bg-accent-dark mx-auto mb-6"
+            ></motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
-          {/* Chart - Styled to be minimal */}
+          {/* Chart - Professional Style */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-[400px] w-full relative"
+            className="h-[400px] w-full relative bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-4 transition-colors"
           >
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                <div className="w-64 h-64 border border-accent rounded-full animate-pulse-slow"></div>
-                <div className="w-48 h-48 border border-accent absolute rounded-full"></div>
-             </div>
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-                <PolarGrid stroke="#334155" /> {/* slate-700 */}
-                <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 500, fontFamily: 'monospace' }} />
+                <PolarGrid stroke="#e2e8f0" strokeOpacity={0.5} /> {/* slate-200 */}
+                <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 12, fontWeight: 600, fontFamily: 'sans-serif' }} />
                 <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                 <Radar
                   name="Proficiency"
                   dataKey="A"
-                  stroke="#06b6d4" // cyan-500
+                  stroke="#0f766e" // accent color (Teal 700)
                   strokeWidth={2}
-                  fill="#06b6d4"
-                  fillOpacity={0.4}
+                  fill="#0f766e"
+                  fillOpacity={0.2}
                   isAnimationActive={true}
                 />
                 <Tooltip 
-                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#fff', fontSize: '12px' }}
-                    itemStyle={{ color: '#22d3ee' }}
-                    cursor={{ stroke: '#06b6d4', strokeWidth: 1 }}
+                    contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', color: '#1e293b', fontSize: '12px', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
+                    itemStyle={{ color: '#0f766e', fontWeight: 'bold' }}
+                    cursor={{ stroke: '#0f766e', strokeWidth: 1 }}
                 />
               </RadarChart>
             </ResponsiveContainer>
@@ -79,15 +77,15 @@ const Skills: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="border-b border-slate-800 pb-6 last:border-0"
+                className="border-b border-slate-200 dark:border-slate-800 pb-6 last:border-0"
               >
-                <h3 className="text-sm font-bold text-accent uppercase tracking-widest mb-4 font-mono">{skillGroup.category}</h3>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <h3 className="text-sm font-bold text-accent dark:text-accent-dark uppercase tracking-widest mb-4 font-sans">{skillGroup.category}</h3>
+                <div className="flex flex-wrap gap-x-3 gap-y-2">
                   {skillGroup.items.map((item) => (
                     <motion.span 
                         key={item} 
-                        whileHover={{ scale: 1.05, color: "#fff" }}
-                        className="text-slate-300 font-light hover:text-white transition-colors cursor-default"
+                        whileHover={{ y: -2 }}
+                        className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-md hover:bg-accent/10 dark:hover:bg-accent-dark/10 hover:text-accent dark:hover:text-accent-dark transition-colors cursor-default border border-slate-200 dark:border-slate-700"
                     >
                       {item}
                     </motion.span>

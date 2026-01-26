@@ -1,29 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-primary: #0f172a;
-  --color-secondary: #1e293b;
-  --color-accent: #06b6d4;
-  --color-dark: #020617;
-  --color-light: #f8fafc;
-  --color-muted: #94a3b8;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
+  /* Colors - Light Mode */
+  --color-primary: #ffffff;
+  --color-secondary: #f8fafc;
+  --color-accent: #0f766e;
+  --color-accent-light: #2dd4bf;
+  --color-dark: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  /* Colors - Dark Mode (Explicit colors for dark: classes) */
+  --color-primary-dark: #020617;
+  --color-secondary-dark: #0f172a;
+  --color-accent-dark: #2dd4bf;
+  --color-text-dark: #f1f5f9;
+  --color-muted-dark: #94a3b8;
+  --color-border-dark: #1e293b;
 
   /* Fonts */
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Merriweather', serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Merriweather', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* Custom Utilities */
-@utility bg-grid-pattern {
-  background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+@utility shadow-soft {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
 }
 
-@utility text-glow {
-  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+@utility glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+/* Dark mode glass panel override */
+@variant dark (&:where(.dark, .dark *));
+
+.dark .glass-panel {
+  @apply bg-black/30 backdrop-blur-md border border-white/10;
 }
 
 /* Base styles */
@@ -32,5 +46,18 @@ html {
 }
 
 body {
-  @apply bg-dark text-light font-sans antialiased selection:bg-accent selection:text-white;
+  @apply bg-primary text-dark font-sans antialiased selection:bg-accent selection:text-white transition-colors duration-300;
+}
+
+/* Apply dark mode base styles when the .dark class is present on html/body */
+:root:has(.dark) body, .dark body {
+    @apply bg-primary-dark text-text-dark selection:bg-accent-dark selection:text-black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif text-dark;
+}
+
+:root:has(.dark) :is(h1, h2, h3, h4, h5, h6), .dark :is(h1, h2, h3, h4, h5, h6) {
+    @apply text-text-dark;
 }
