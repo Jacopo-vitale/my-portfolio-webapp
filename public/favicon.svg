@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .text { font-family: serif; font-weight: bold; fill: #1e293b; }
+    .dot { font-family: serif; font-weight: bold; fill: #0f766e; }
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #f1f5f9; }
+      .dot { fill: #2dd4bf; }
+    }
+  </style>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="55" class="text">
+    JV<tspan class="dot">.</tspan>
+  </text>
+</svg>

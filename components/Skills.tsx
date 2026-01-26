@@ -43,29 +43,31 @@ const Skills: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-[400px] w-full relative bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-4 transition-colors"
+            className="h-[400px] w-full min-w-0 relative bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-4 transition-colors"
           >
-            <ResponsiveContainer width="100%" height="100%">
-              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-                <PolarGrid stroke="#e2e8f0" strokeOpacity={0.5} /> {/* slate-200 */}
-                <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 12, fontWeight: 600, fontFamily: 'sans-serif' }} />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                <Radar
-                  name="Proficiency"
-                  dataKey="A"
-                  stroke="#0f766e" // accent color (Teal 700)
-                  strokeWidth={2}
-                  fill="#0f766e"
-                  fillOpacity={0.2}
-                  isAnimationActive={true}
-                />
-                <Tooltip 
-                    contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', color: '#1e293b', fontSize: '12px', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-                    itemStyle={{ color: '#0f766e', fontWeight: 'bold' }}
-                    cursor={{ stroke: '#0f766e', strokeWidth: 1 }}
-                />
-              </RadarChart>
-            </ResponsiveContainer>
+            <div className="w-full h-full min-h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
+                    <PolarGrid stroke="#e2e8f0" strokeOpacity={0.5} /> {/* slate-200 */}
+                    <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 12, fontWeight: 600, fontFamily: 'sans-serif' }} />
+                    <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                    <Radar
+                    name="Proficiency"
+                    dataKey="A"
+                    stroke="#0f766e" // accent color (Teal 700)
+                    strokeWidth={2}
+                    fill="#0f766e"
+                    fillOpacity={0.2}
+                    isAnimationActive={true}
+                    />
+                    <Tooltip 
+                        contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', color: '#1e293b', fontSize: '12px', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
+                        itemStyle={{ color: '#0f766e', fontWeight: 'bold' }}
+                        cursor={{ stroke: '#0f766e', strokeWidth: 1 }}
+                    />
+                </RadarChart>
+                </ResponsiveContainer>
+            </div>
           </motion.div>
 
           {/* List */}

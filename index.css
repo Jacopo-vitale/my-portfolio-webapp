@@ -43,6 +43,7 @@
 /* Base styles */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* 80px to clear fixed navbar */
 }
 
 body {
