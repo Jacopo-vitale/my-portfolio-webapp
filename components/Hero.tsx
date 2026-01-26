@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PROFILE } from '../constants';
 import { Github, Linkedin, Mail, MapPin, BookOpen, Download } from 'lucide-react';
+import { Orcid } from './Icons';
 
 const Hero: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ const Hero: React.FC = () => {
             className="mb-8 inline-block"
         >
             <h2 className="text-accent font-mono text-xs md:text-sm tracking-[0.2em] uppercase border-b border-accent/30 pb-1 mb-2">
-                Medical AI Engineer
+                Computer Science Engineer
             </h2>
         </motion.div>
 
@@ -85,11 +86,13 @@ const Hero: React.FC = () => {
                 <Linkedin className="w-4 h-4" /> 
                 <span>LinkedIn</span>
             </a>
-            
-             {/* New Resume Button */}
-             <a href="/resume.pdf" target="_blank" className="group flex items-center gap-2 text-sm font-bold text-dark bg-accent hover:bg-cyan-400 transition-all px-5 py-2.5 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)]">
-                <Download className="w-4 h-4" /> 
-                <span>CV / Resume</span>
+            <a href={PROFILE.orcid} target="_blank" rel="noreferrer" className="group flex items-center gap-2 text-sm font-medium text-white hover:text-accent transition-all bg-white/5 backdrop-blur-sm px-5 py-2.5 rounded-full border border-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                <Orcid className="w-4 h-4" /> 
+                <span>ORCID</span>
+            </a>
+            <a href={PROFILE.scholar} target="_blank" rel="noreferrer" className="group flex items-center gap-2 text-sm font-medium text-white hover:text-accent transition-all bg-white/5 backdrop-blur-sm px-5 py-2.5 rounded-full border border-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                <BookOpen className="w-4 h-4" /> 
+                <span>Scholar</span>
             </a>
         </motion.div>
 
@@ -97,9 +100,27 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex items-center justify-center gap-2 text-slate-500 text-xs uppercase tracking-widest font-mono"
+            className="flex flex-col md:flex-row items-center justify-center gap-4 text-slate-500 text-xs uppercase tracking-widest font-mono"
         >
-             <MapPin className="w-3 h-3" /> {PROFILE.location}
+             <a 
+                href={PROFILE.locationLink} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-2 hover:text-accent transition-colors group"
+             >
+                <MapPin className="w-3 h-3 group-hover:animate-bounce" /> 
+                <span>Current: {PROFILE.location}</span>
+             </a>
+             <div className="hidden md:block w-1 h-1 bg-slate-800 rounded-full"></div>
+             <a 
+                href={PROFILE.hometownLink} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-2 hover:text-accent transition-colors"
+             >
+                <span className="opacity-50 text-[10px]">Hometown:</span>
+                <span>{PROFILE.hometown}</span>
+             </a>
         </motion.div>
       </div>
     </section>

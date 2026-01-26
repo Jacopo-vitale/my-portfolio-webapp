@@ -7,8 +7,10 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
-import { BookOpen } from 'lucide-react';
 import { PROFILE } from './constants';
+import { Github, Linkedin, BookOpen, Instagram, Rss } from './components/Icons'; // Import custom icons
+import { Orcid } from './components/Icons'; 
+import { Download } from 'lucide-react';
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -20,7 +22,7 @@ const App: React.FC = () => {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-dark text-slate-200 font-sans selection:bg-accent selection:text-white relative overflow-x-hidden">
+      <div className="min-h-screen bg-dark text-slate-200 font-sans selection:bg-accent selection:text-white relative">
         
         <Helmet>
             <title>{PROFILE.name} | Medical AI Engineer</title>
@@ -46,8 +48,8 @@ const App: React.FC = () => {
              }}
         ></div>
 
-        {/* Navigation - Sticky with Glassmorphism */}
-        <nav className="sticky top-0 z-50 bg-primary/80 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/10">
+        {/* Navigation - Fixed with Glassmorphism */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/10">
           <div className="container mx-auto px-6 h-16 flex justify-between items-center">
             <motion.a 
               initial={{ opacity: 0, x: -20 }}
@@ -78,18 +80,17 @@ const App: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              href={PROFILE.scholar} 
+              href="/resume.pdf" 
               target="_blank" 
-              rel="noreferrer" 
-              className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-cyan-900/50 text-[10px] font-bold px-3 py-1.5 rounded-full transition-all uppercase tracking-widest hover:shadow-[0_0_10px_rgba(6,182,212,0.3)]"
+              className="flex items-center gap-2 bg-accent hover:bg-cyan-400 text-dark border border-cyan-900/50 text-[10px] font-bold px-3 py-1.5 rounded-full transition-all uppercase tracking-widest hover:shadow-[0_0_10px_rgba(6,182,212,0.3)]"
             >
-              <BookOpen className="w-3 h-3" /> Scholar
+              <Download className="w-3 h-3" /> CV / Resume
             </motion.a>
           </div>
         </nav>
 
         {/* Sections */}
-        <main className="relative z-10">
+        <main className="relative z-10 pt-16">
           <Hero />
           <Experience />
           <Projects />
@@ -100,7 +101,28 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <footer className="relative z-10 py-12 bg-dark text-center text-slate-600 text-sm border-t border-slate-900">
-          <p>© {new Date().getFullYear()} Jacopo Vitale. Bioengineering & Intelligent Systems.</p>
+            <div className="flex justify-center gap-6 mb-8">
+                <a href={`https://github.com/${PROFILE.github}`} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="GitHub">
+                    <Github className="w-5 h-5" />
+                </a>
+                <a href={`https://linkedin.com/in/${PROFILE.linkedin}`} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="LinkedIn">
+                    <Linkedin className="w-5 h-5" />
+                </a>
+                <a href={PROFILE.scholar} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="Google Scholar">
+                    <BookOpen className="w-5 h-5" />
+                </a>
+                <a href={PROFILE.orcid} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="ORCID">
+                    <Orcid className="w-5 h-5" />
+                </a>
+                <a href={`https://instagram.com/${PROFILE.instagram}`} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="Instagram">
+                    <Instagram className="w-5 h-5" />
+                </a>
+                <a href={PROFILE.rss} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="RSS Feed">
+                    <Rss className="w-5 h-5" />
+                </a>
+            </div>
+          <p>© {new Date().getFullYear()} Jacopo Vitale. All rights reserved.</p>
+          <p className="text-xs text-slate-700 mt-2">Computer Science Engineer</p>
         </footer>
       </div>
     </HelmetProvider>

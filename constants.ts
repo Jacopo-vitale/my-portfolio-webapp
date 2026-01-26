@@ -2,12 +2,18 @@ import { Experience, Education, Publication, Project, Skill, GalleryItem } from 
 
 export const PROFILE = {
   name: "Jacopo Vitale",
-  title: "PhD Candidate in Bioengineering & Intelligent Systems",
-  location: "Formia, Italy",
+  title: "AI & Robotics for Medical Applications",
+  location: "Rome, Italy",
+  locationLink: "https://www.google.com/maps/search/?api=1&query=Rome,+Italy",
+  hometown: "Formia, Italy",
+  hometownLink: "https://www.google.com/maps/search/?api=1&query=Formia,+Italy",
   email: "jacopo.vitale96@gmail.com",
   linkedin: "jacopo-vitale96",
   github: "Jacopo-vitale",
+  orcid: "https://orcid.org/0009-0006-5991-0246",
   scholar: "https://scholar.google.com/citations?user=HnOZ1UUAAAAJ&hl=it",
+  instagram: "jacopo_vita", // Placeholder
+  rss: "#", // Placeholder
   summary: "PhD Candidate with a strong focus on Medical AI, Human-Technology Interaction, and Health Tech. Expertise in designing full stack Deep Learning architectures for clinical decision support and Clinical NLP. Experienced in EU Projects and collaborative international research."
 };
 
