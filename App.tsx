@@ -117,9 +117,6 @@ const App: React.FC = () => {
                 <a href={`https://instagram.com/${PROFILE.instagram}`} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="Instagram">
                     <Instagram className="w-5 h-5" />
                 </a>
-                <a href={PROFILE.rss} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-accent transition-colors" aria-label="RSS Feed">
-                    <Rss className="w-5 h-5" />
-                </a>
             </div>
           <p>© {new Date().getFullYear()} Jacopo Vitale. All rights reserved.</p>
           <p className="text-xs text-slate-700 mt-2">Computer Science Engineer</p>
