@@ -34,6 +34,14 @@ export interface Project {
   description: string;
   tech: string[];
   icon: 'code' | 'cpu' | 'eye' | 'activity';
+  image?: string;
+}
+
+export interface Hobby {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
 }
 
 export interface Skill {

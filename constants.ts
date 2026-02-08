@@ -1,4 +1,4 @@
-import { Experience, Education, Publication, Project, Skill, GalleryItem } from './types';
+import { Experience, Education, Publication, Project, Skill, GalleryItem, Hobby } from './types';
 
 export const PROFILE = {
   name: "Jacopo Vitale",
@@ -157,28 +157,32 @@ export const PROJECTS: Project[] = [
     title: "eHTA Tool",
     description: "Online automated platform for Early Health Technology Assessment.",
     tech: ["Web Platform", "Healthcare"],
-    icon: "activity"
+    icon: "activity",
+    image: "ehta.jpg"
   },
   {
     id: "rare-path",
     title: "Rare Path Platform",
     description: "AI diagnostic platform for rare disease classification using multi-modal data.",
     tech: ["Deep Learning", "Diagnostics"],
-    icon: "cpu"
+    icon: "cpu",
+    image: "rare-path.jpg"
   },
   {
     id: "pupil-extraction",
     title: "Real-time Pupillometry",
     description: "Web-based pupil size extraction tool for experimental monitoring.",
     tech: ["TypeScript", "Vite", "CNN", "Real-time"],
-    icon: "eye"
+    icon: "eye",
+    image: "pupillometry.jpg"
   },
   {
     id: "tms-hotspot",
     title: "TMS Hotspot Automation",
     description: "ML-driven robotic localization tool using Bayesian Gaussian Processes for motor cortex mapping.",
     tech: ["Robotics", "Bayesian ML", "Python"],
-    icon: "code"
+    icon: "code",
+    image: "tms.jpg"
   }
 ];
 
@@ -255,4 +259,25 @@ export const GALLERY: GalleryItem[] = [
     description: "Tutoring and holding a seminar on Docker & Kubernetes",
     link:"https://www.jesus.cam.ac.uk/"
   },
+];
+
+export const HOBBIES: Hobby[] = [
+  {
+    id: "chess",
+    title: "Chess",
+    image: "chess.jpg",
+    description: "Strategy and focus. I enjoy playing both online and in local tournaments."
+  },
+  {
+    id: "padel",
+    title: "Padel",
+    image: "padel.jpg",
+    description: "Fast-paced and social. A great way to stay active and enjoy some team competition."
+  },
+  {
+    id: "tennis",
+    title: "Tennis",
+    image: "tennis.jpg",
+    description: "Classic precision and endurance. I've been playing since I was young."
+  }
 ];

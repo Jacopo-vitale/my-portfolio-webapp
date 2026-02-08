@@ -41,27 +41,41 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-white dark:bg-slate-900 rounded-xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl dark:shadow-none dark:hover:border-accent-dark/50 transition-all duration-300"
+              className="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 min-h-[320px] flex flex-col"
             >
-              <div className="flex justify-between items-start mb-6">
-                <div className="p-3 bg-accent/5 dark:bg-accent-dark/10 rounded-lg text-accent dark:text-accent-dark group-hover:bg-accent dark:group-hover:bg-accent-dark group-hover:text-white dark:group-hover:text-black transition-colors">
-                    {getIcon(project.icon)}
+              {/* Image Background if available */}
+              {project.image && (
+                <>
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  ></div>
+                  {/* Overlay Gradient - Consistent with Gallery */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-slate-900/95 dark:via-slate-900/70 dark:to-transparent opacity-90 transition-opacity duration-500"></div>
+                </>
+              )}
+
+              <div className="relative z-10 p-8 h-full flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="p-3 bg-accent/5 dark:bg-accent-dark/10 rounded-lg text-accent dark:text-accent-dark group-hover:bg-accent dark:group-hover:bg-accent-dark group-hover:text-white dark:group-hover:text-black transition-colors">
+                      {getIcon(project.icon)}
+                  </div>
                 </div>
-              </div>
-              
-              <h3 className="text-xl font-bold text-dark dark:text-white mb-3 group-hover:text-accent dark:group-hover:text-accent-dark transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                {project.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map(t => (
-                  <span key={t} className="px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700">
-                    {t}
-                  </span>
-                ))}
+                
+                <h3 className="text-xl font-bold text-dark dark:text-white mb-3 group-hover:text-accent dark:group-hover:text-accent-dark transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map(t => (
+                    <span key={t} className="px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100/80 dark:bg-slate-800/80 rounded-full border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

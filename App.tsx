@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Gallery from './components/Gallery';
+import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 import { PROFILE } from './constants';
 import { Github, Linkedin, BookOpen, Instagram, Rss } from './components/Icons'; // Import custom icons
@@ -79,7 +80,7 @@ const App: React.FC = () => {
               <div className="absolute left-1/2 transform -translate-x-1/2">
                   {/* Desktop: Navigation Links */}
                   <div className="hidden md:flex gap-8 text-sm font-medium text-muted dark:text-muted-dark uppercase tracking-wider font-sans">
-                    {['Experience', 'Work', 'Skills', 'Gallery', 'Contact'].map((item, i) => (
+                    {['Experience', 'Work', 'Skills', 'Gallery', 'Hobbies', 'Contact'].map((item, i) => (
                       <motion.a 
                         key={item}
                         initial={{ opacity: 0, y: -10 }}
@@ -143,7 +144,7 @@ const App: React.FC = () => {
                   className="md:hidden bg-white/95 dark:bg-primary-dark/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 overflow-hidden"
                 >
                   <div className="flex flex-col items-center py-8 gap-6">
-                    {['Experience', 'Work', 'Skills', 'Gallery', 'Contact'].map((item) => (
+                    {['Experience', 'Work', 'Skills', 'Gallery', 'Hobbies', 'Contact'].map((item) => (
                       <a 
                         key={item}
                         href={`#${item.toLowerCase()}`}
@@ -166,6 +167,7 @@ const App: React.FC = () => {
             <Projects />
             <Skills />
             <Gallery />
+            <Hobbies />
             <Contact />
           </main>
 
