@@ -91,65 +91,7 @@ export const EDUCATION: Education[] = [
   }
 ];
 
-export const PUBLICATIONS: Publication[] = [
-  {
-    id: "1",
-    authors: "Vitale, J., et al.",
-    title: "Artificial intelligence for left ventricular hypertrophy detection and differentiation on echocardiography, cardiac magnetic resonance and cardiac computed tomography: A systematic review",
-    journal: "International Journal of Cardiology",
-    year: "2025",
-    doi: "https://doi.org/10.1016/j.ijcard.2025.132979" 
-  },
-  {
-    id: "2",
-    authors: "Vitale, J., et al.",
-    title: "Automatic Text Classification in Cardiac Risk Management: A Pilot Study",
-    journal: "NBC on BME",
-    year: "2025",
-    doi: "https://doi.org/10.1007/978-3-031-96538-8_16"
-  },
-  {
-    id: "3",
-    authors: "Vitale, J., et al.",
-    title: "Rare Eye Diseases Automatic Classification: A Deep Learning Approach",
-    journal: "EMBEC",
-    year: "2024",
-    doi: "https://doi.org/10.1007/978-3-031-61628-0_27"
-  },
-  {
-    id: "4",
-    authors: "Vitale, J., et al.",
-    title: "A Machine Learning Approach for Predicting Electrophysiological Responses in Genetically Modified HEK Cells",
-    journal: "EMBEC",
-    year: "2024",
-    doi: "https://doi.org/10.1007/978-3-031-61625-9_1"
-  },
-  {
-    id: "5",
-    authors: "Formica, V., ..., Vitale, J., et al.",
-    title: "Clinicomics for predicting HER2 expression in metastatic colorectal cancer: a multicenter machine learning analysis on real-world data",
-    journal: "Oncology",
-    year: "2025",
-    doi:"https://doi.org/10.1159/000549661"
-  },
-  {
-    id: "6",
-    authors: "Sassi, M., Vitale, J., et al.",
-    title: "Genetic Algorithm for Predicting Primary Imatinib Resistance in Locally Advanced or Metastatic Gastrointestinal Stromal Tumors",
-    journal: "NBC on BME",
-    year: "2025",
-    award: "Best Research Paper Award",
-    doi:"https://doi.org/10.1007/978-3-031-96538-8_17"
-  },
-  {
-    id: "7",
-    authors: "Pagnano, M.E., ..., Vitale, J., et al.",
-    title: "Echocardiographic Image-Based Classification of Cardiac Amyloidosis: A Proof of Concept",
-    journal: "NBC on BME",
-    year: "2025",
-    doi:"https://doi.org/10.1007/978-3-031-96538-8_18"
-  }
-];
+export const PUBLICATIONS: Publication[] = [];
 
 export const PROJECTS: Project[] = [
   {

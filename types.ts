@@ -6,6 +6,7 @@ export interface Publication {
   year: string;
   award?: string;
   doi?: string;
+  scholarLink?: string;
 }
 
 export interface Experience {

@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { PROJECTS, PUBLICATIONS, AWARDS, PROFILE } from '../constants';
+import { PROJECTS, PUBLICATIONS as STATIC_PUBLICATIONS, AWARDS, PROFILE } from '../constants';
 import { Code, Cpu, Eye, Activity, ExternalLink, Award, BookOpen } from 'lucide-react';
+import { Publication } from '../types';
 
 const Projects: React.FC = () => {
+  const [publications, setPublications] = useState<Publication[]>(STATIC_PUBLICATIONS);
+
+  useEffect(() => {
+    fetch('/publications.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setPublications(data);
+        }
+      })
+      .catch(error => {
+        console.warn('Could not fetch dynamic publications, using static fallback:', error);
+      });
+  }, []);
   
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -94,10 +112,11 @@ const Projects: React.FC = () => {
             </div>
             
             <div className="space-y-6">
-                {PUBLICATIONS.map((pub, index) => {
-                    const Wrapper = pub.doi ? 'a' : 'div';
-                    const wrapperProps = pub.doi 
-                        ? { href: pub.doi, target: "_blank", rel: "noreferrer" } 
+                {publications.map((pub, index) => {
+                    const paperUrl = pub.doi || pub.scholarLink;
+                    const Wrapper = paperUrl ? 'a' : 'div';
+                    const wrapperProps = paperUrl 
+                        ? { href: paperUrl, target: "_blank", rel: "noreferrer" } 
                         : {};
 
                     return (
@@ -110,10 +129,10 @@ const Projects: React.FC = () => {
                         >
                             <Wrapper 
                                 {...wrapperProps}
-                                className={`block bg-white dark:bg-slate-900 p-6 rounded-lg border-l-4 border-accent dark:border-accent-dark shadow-sm hover:shadow-lg dark:hover:shadow-black/30 transition-all duration-300 transform hover:-translate-y-1 dark:border-r dark:border-t dark:border-b dark:border-r-slate-800 dark:border-t-slate-800 dark:border-b-slate-800 ${pub.doi ? 'cursor-pointer hover:border-l-accent-light dark:hover:border-l-accent-dark' : ''}`}
+                                className={`block bg-white dark:bg-slate-900 p-6 rounded-lg border-l-4 border-accent dark:border-accent-dark shadow-sm hover:shadow-lg dark:hover:shadow-black/30 transition-all duration-300 transform hover:-translate-y-1 dark:border-r dark:border-t dark:border-b dark:border-r-slate-800 dark:border-t-slate-800 dark:border-b-slate-800 ${paperUrl ? 'cursor-pointer hover:border-l-accent-light dark:hover:border-l-accent-dark' : ''}`}
                             >
                                 <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
-                                    <h3 className={`text-lg font-bold leading-tight ${pub.doi ? 'text-dark dark:text-white group-hover:text-accent dark:group-hover:text-accent-dark' : 'text-dark dark:text-white'}`}>
+                                    <h3 className={`text-lg font-bold leading-tight ${paperUrl ? 'text-dark dark:text-white group-hover:text-accent dark:group-hover:text-accent-dark' : 'text-dark dark:text-white'}`}>
                                         {pub.title}
                                     </h3>
                                     {pub.award && (
@@ -134,7 +153,7 @@ const Projects: React.FC = () => {
                                     <span className="text-slate-500 dark:text-slate-500 font-medium">
                                         {pub.year}
                                     </span>
-                                    {pub.doi && (
+                                    {paperUrl && (
                                         <div className="flex items-center gap-1 text-slate-400 hover:text-accent dark:hover:text-accent-dark transition-colors text-xs uppercase tracking-wider font-bold ml-auto">
                                             <ExternalLink className="w-3 h-3" /> READ PAPER
                                         </div>
